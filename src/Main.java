@@ -1,6 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
+        BinaryTree tree = BinaryTree.getExampleTree();
+        int quantity = tree.nodeCount();
+        // contar elementos
+        System.out.println(quantity);
+        //Em ordem
+        tree.printValuesInOrder();
+        // pre order
+        tree.printValuesPreOrder();
+        // post order
+        tree.printValuesPostOrder();
+        // por nivel
+        tree.printValuesByLevel();
     }
 }
