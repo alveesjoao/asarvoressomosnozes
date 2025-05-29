@@ -55,12 +55,9 @@ public class BinaryTree {
         while (!stack.isEmpty()) {
             Node node = stack.pop();
             values.add(node);
-            if (node.getRight() != null) {
-                stack.push(node.getRight());
-            }
-            if (node.getLeft() != null) {
-                stack.push(node.getLeft());
-            }
+
+            if (node.getRight() != null) stack.push(node.getRight());
+            if (node.getLeft() != null) stack.push(node.getLeft());
         }
         return values;
     }
@@ -141,5 +138,28 @@ public class BinaryTree {
             System.out.print(node.getValue() + " ");
         }
         System.out.println("]");
+    }
+
+    // recursivo
+    public int countLeafsNode(Node node) {
+        if(node == null) return 0;
+        if(node.getLeft() == null && node.getRight() == null) return 1;
+        return countLeafsNode(node.getLeft()) + countLeafsNode(node.getRight());
+
+
+    }
+
+    //iterativo
+    public int countLeafsIterative() {
+        if(root == null) return 0;
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+
+        int count = 0;
+        while(!stack.isEmpty()) {
+            Node current = stack.pop();
+            if(current.getLeft() == null && current.getRight() == null) count++;
+        }
+        return count;
     }
 }

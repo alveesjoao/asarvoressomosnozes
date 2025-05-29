@@ -13,5 +13,12 @@ public class Main {
         tree.printValuesPostOrder();
         // por nivel
         tree.printValuesByLevel();
+
+        //recursivo
+        System.out.println(tree.countLeafsNode(tree.root));
+
+        //iterativo
+        tree.countLeafsIterative();
+
     }
 }
