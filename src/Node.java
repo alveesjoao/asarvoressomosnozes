@@ -2,9 +2,13 @@ public class Node {
     private int value;
     private Node left;
     private Node right;
+    int altura;
 
     public Node(int value) {
         this.value = value;
+        this.left = null;
+        this.right = null;
+        this.altura = 0;
     }
 
     public int getValue() {
@@ -30,6 +34,7 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
+
 
 }
 
