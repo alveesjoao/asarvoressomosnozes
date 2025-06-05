@@ -1,22 +1,21 @@
 public class Node {
-    private int value;
-    private Node left;
-    private Node right;
-    int altura;
+    int key;
+    Node left;
+    Node right;
+    int height;
+
 
     public Node(int value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-        this.altura = 0;
+        this.key = value;
+        this.height = 0;
     }
 
     public int getValue() {
-        return value;
+        return key;
     }
 
     public void setValue(int value) {
-        this.value = value;
+        this.key = value;
     }
 
     public Node getLeft() {
